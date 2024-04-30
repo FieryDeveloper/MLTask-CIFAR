@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IISC ML Engineer Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/grid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.7));
+            color: white;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: #2ecc71; /* Green */
+            margin-bottom: 30px;
+        }
+        .upload-section {
+            margin-bottom: 50px;
+        }
+        .upload-file, .upload-link {
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #2ecc71; /* Green */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #27ae60; /* Darker Green */
+        }
+        .error {
+            color: red;
+            margin-top: 15px;
+        }
+        .footer p {
+            margin-bottom: 20px;
+        }
+        .footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .footer ul li {
+            margin: 0 10px;
+        }
+        .made-by {
+            margin-top: 50px;
+            font-size: 16px;
+        }
+        .made-by a {
+            color: #2ecc71; /* Green */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IISC ML Engineer Task</h1>
+        <div class="upload-section">
+            <div class="upload-file">
+                <form class="file-form" action="/success" method="post" enctype="multipart/form-data">
+                    <input class="file-form-input" type="file" name="file">
+                    <button class="btn btn-lg">Upload</button>
+                </form>
+            </div>
+            <div class="uploadOR">
+                <span>OR</span>
+            </div>
+            <div class="upload-link">
+                <form class="link-form" action="/success" method="post" enctype="multipart/form-data">
+                    <input class="link-form-input" type="text" maxlength="1000" name="link" placeholder="Paste the image URL">
+                    <button class="btn btn-lg">Proceed</button>
+                </form>
+            </div>
+            <div class="error">{{ error }}</div>
+        </div>
+        <div class="footer">
+            <p>The dataset used in this project is CIFAR-10. The model was trained with a CNN architecture. Below you can see the classes of the dataset:</p>
+            <div class="footer-lists">
+                <ul>
+                    <li>Dog</li>
+                    <li>Cat</li>
+                    <li>Horse</li>
+                    <li>Deer</li>
+                    <li>Frog</li>
+                </ul>
+                <ul>
+                    <li>Airplane</li>
+                    <li>Truck</li>
+                    <li>Automobile</li>
+                    <li>Ship</li>
+                    <li>Bird</li>
+                </ul>
+            </div>
+            <div class="made-by">
+                <p>Made by Amogh Gupta</p>
+                <p>Email: <a href="mailto:amoghwork03@gmail.com">amoghwork03@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
